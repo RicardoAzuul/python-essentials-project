@@ -33,9 +33,12 @@ def get_sales_data():
 def validate_data(values):
     """
     Inside the try, converts all strings into integers.
-    Raises ValueError if strings cannot be converted into int, or if there aren't exactly 6 values.
+    Raises ValueError if strings cannot be converted into int, 
+    or if there aren't exactly 6 values.
     """
     try:
+        # for each in value in values do method int on value
+        [int(value) for value in values]
         if len(values) != 6:
             raise ValueError(
                 f"Exactly 6 values required, you provided {len(values)}"
